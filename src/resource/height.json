@@ -1,0 +1,190 @@
+{
+    "resourceType": "Bundle",
+    "type": "searchset",
+    "total": 3,
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation?patient=Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB&code=8302-2"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsron.8Qlu-yjOF792bUBX3SIbfHB2tCIji02R3yFXSi4vWB",
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsron.8Qlu-yjOF792bUBX3SIbfHB2tCIji02R3yFXSi4vWB"
+                }
+            ],
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "effectiveDateTime": "2016-04-19T15:02:00Z",
+                "status": "final",
+                "id": "Tnf7t0.SP6znu2Dc1kPsron.8Qlu-yjOF792bUBX3SIbfHB2tCIji02R3yFXSi4vWB",
+                "code": {
+                    "text": "Height",
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8302-2",
+                            "display": "Body height"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8716-3",
+                            "display": "Vital Signs grouping"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 178.0,
+                    "unit": "cm",
+                    "code": "cm",
+                    "system": "http://unitsofmeasure.org"
+                },
+                "subject": {
+                    "display": "Jason Argonaut",
+                    "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB"
+                },
+                "performer": [
+                    {
+                        "display": "MOORE, NICK",
+                        "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Practitioner/TItWfhjChtlo0pFh9nzctSQB"
+                    }
+                ],
+                "category": {
+                    "text": "Vital Signs",
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/observation-category",
+                            "code": "vital-signs",
+                            "display": "Vital Signs"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsroonALFGbtOt6b2yu6wZ4ivQnUE5WYIxf5J-erfYzyecCB",
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsroonALFGbtOt6b2yu6wZ4ivQnUE5WYIxf5J-erfYzyecCB"
+                }
+            ],
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "effectiveDateTime": "2015-08-26T22:00:00Z",
+                "status": "final",
+                "id": "Tnf7t0.SP6znu2Dc1kPsroonALFGbtOt6b2yu6wZ4ivQnUE5WYIxf5J-erfYzyecCB",
+                "code": {
+                    "text": "Height",
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8302-2",
+                            "display": "Body height"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8716-3",
+                            "display": "Vital Signs grouping"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 185.0,
+                    "unit": "cm",
+                    "code": "cm",
+                    "system": "http://unitsofmeasure.org"
+                },
+                "subject": {
+                    "display": "Jason Argonaut",
+                    "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB"
+                },
+                "performer": [
+                    {
+                        "display": "MOORE, NICK",
+                        "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Practitioner/TItWfhjChtlo0pFh9nzctSQB"
+                    }
+                ],
+                "category": {
+                    "text": "Vital Signs",
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/observation-category",
+                            "code": "vital-signs",
+                            "display": "Vital Signs"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsrog5qrfqH33vJQOxAByVedwC2C0rv4mz1Yn.XbBMaol8RB",
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsrog5qrfqH33vJQOxAByVedwC2C0rv4mz1Yn.XbBMaol8RB"
+                }
+            ],
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "effectiveDateTime": "2015-08-25T22:46:00Z",
+                "status": "final",
+                "id": "Tnf7t0.SP6znu2Dc1kPsrog5qrfqH33vJQOxAByVedwC2C0rv4mz1Yn.XbBMaol8RB",
+                "code": {
+                    "text": "Height",
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8302-2",
+                            "display": "Body height"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8716-3",
+                            "display": "Vital Signs grouping"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 184.0,
+                    "unit": "cm",
+                    "code": "cm",
+                    "system": "http://unitsofmeasure.org"
+                },
+                "subject": {
+                    "display": "Jason Argonaut",
+                    "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB"
+                },
+                "performer": [
+                    {
+                        "display": "MOORE, NICK",
+                        "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Practitioner/TItWfhjChtlo0pFh9nzctSQB"
+                    }
+                ],
+                "category": {
+                    "text": "Vital Signs",
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/observation-category",
+                            "code": "vital-signs",
+                            "display": "Vital Signs"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

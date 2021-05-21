@@ -1,0 +1,263 @@
+{
+    "resourceType": "Bundle",
+    "type": "searchset",
+    "total": 4,
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation?patient=Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB&code=29463-7"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsrosyG3KPzDXf3pviWMZpcO4A-wOY5opJLV022-ltSQzxHB",
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsrosyG3KPzDXf3pviWMZpcO4A-wOY5opJLV022-ltSQzxHB"
+                }
+            ],
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "effectiveDateTime": "2016-12-22T22:37:00Z",
+                "status": "final",
+                "id": "Tnf7t0.SP6znu2Dc1kPsrosyG3KPzDXf3pviWMZpcO4A-wOY5opJLV022-ltSQzxHB",
+                "code": {
+                    "text": "Weight",
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "29463-7",
+                            "display": "Body weight"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "3141-9",
+                            "display": "Body weight Measured"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8716-3",
+                            "display": "Vital Signs grouping"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 90.0,
+                    "unit": "kg",
+                    "code": "kg",
+                    "system": "http://unitsofmeasure.org"
+                },
+                "subject": {
+                    "display": "Jason Argonaut",
+                    "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB"
+                },
+                "category": {
+                    "text": "Vital Signs",
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/observation-category",
+                            "code": "vital-signs",
+                            "display": "Vital Signs"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsron.8Qlu-yjOF792bUBX3SIYz0DeF3lUUdA2I7GCkFMOoB",
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsron.8Qlu-yjOF792bUBX3SIYz0DeF3lUUdA2I7GCkFMOoB"
+                }
+            ],
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "effectiveDateTime": "2016-04-19T15:02:00Z",
+                "status": "final",
+                "id": "Tnf7t0.SP6znu2Dc1kPsron.8Qlu-yjOF792bUBX3SIYz0DeF3lUUdA2I7GCkFMOoB",
+                "code": {
+                    "text": "Weight",
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "29463-7",
+                            "display": "Body weight"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "3141-9",
+                            "display": "Body weight Measured"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8716-3",
+                            "display": "Vital Signs grouping"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 90.7,
+                    "unit": "kg",
+                    "code": "kg",
+                    "system": "http://unitsofmeasure.org"
+                },
+                "subject": {
+                    "display": "Jason Argonaut",
+                    "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB"
+                },
+                "performer": [
+                    {
+                        "display": "MOORE, NICK",
+                        "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Practitioner/TItWfhjChtlo0pFh9nzctSQB"
+                    }
+                ],
+                "category": {
+                    "text": "Vital Signs",
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/observation-category",
+                            "code": "vital-signs",
+                            "display": "Vital Signs"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsroonALFGbtOt6b2yu6wZ4ivQPbf8mA7yNcyo.0Wg9BNLkB",
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsroonALFGbtOt6b2yu6wZ4ivQPbf8mA7yNcyo.0Wg9BNLkB"
+                }
+            ],
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "effectiveDateTime": "2015-08-26T22:00:00Z",
+                "status": "final",
+                "id": "Tnf7t0.SP6znu2Dc1kPsroonALFGbtOt6b2yu6wZ4ivQPbf8mA7yNcyo.0Wg9BNLkB",
+                "code": {
+                    "text": "Weight",
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "29463-7",
+                            "display": "Body weight"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "3141-9",
+                            "display": "Body weight Measured"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8716-3",
+                            "display": "Vital Signs grouping"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 77.1,
+                    "unit": "kg",
+                    "code": "kg",
+                    "system": "http://unitsofmeasure.org"
+                },
+                "subject": {
+                    "display": "Jason Argonaut",
+                    "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB"
+                },
+                "performer": [
+                    {
+                        "display": "MOORE, NICK",
+                        "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Practitioner/TItWfhjChtlo0pFh9nzctSQB"
+                    }
+                ],
+                "category": {
+                    "text": "Vital Signs",
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/observation-category",
+                            "code": "vital-signs",
+                            "display": "Vital Signs"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsrog5qrfqH33vJQOxAByVedwAmRjUr4t.U4Lpwzs1CD.NiB",
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Observation/Tnf7t0.SP6znu2Dc1kPsrog5qrfqH33vJQOxAByVedwAmRjUr4t.U4Lpwzs1CD.NiB"
+                }
+            ],
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "effectiveDateTime": "2015-08-25T22:46:00Z",
+                "status": "final",
+                "id": "Tnf7t0.SP6znu2Dc1kPsrog5qrfqH33vJQOxAByVedwAmRjUr4t.U4Lpwzs1CD.NiB",
+                "code": {
+                    "text": "Weight",
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "29463-7",
+                            "display": "Body weight"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "3141-9",
+                            "display": "Body weight Measured"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8716-3",
+                            "display": "Vital Signs grouping"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 77.1,
+                    "unit": "kg",
+                    "code": "kg",
+                    "system": "http://unitsofmeasure.org"
+                },
+                "subject": {
+                    "display": "Jason Argonaut",
+                    "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB"
+                },
+                "performer": [
+                    {
+                        "display": "MOORE, NICK",
+                        "reference": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Practitioner/TItWfhjChtlo0pFh9nzctSQB"
+                    }
+                ],
+                "category": {
+                    "text": "Vital Signs",
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/observation-category",
+                            "code": "vital-signs",
+                            "display": "Vital Signs"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

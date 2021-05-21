@@ -1,0 +1,22 @@
+{
+  "sex": {
+    "type": "string",
+    "values": ["Female","Male"]
+  },
+  "age": {
+    "type": "integer",
+    "unit": "years"
+  },
+  "weight": {
+    "type": "float",
+    "unit": "kg"
+  },
+  "height": {
+    "type": "float",
+    "unit": "cm"
+  },
+  "creatinine": {
+    "type": "float",
+    "unit": "mg/dL"
+  }
+}
