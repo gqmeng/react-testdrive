@@ -57,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
     color:'#595959'
   },
   button: {
-    border: `2px solid ${theme.primary}`
+    border: `2px solid ${theme.primary}`,
+    textTransform:'none'
   }
 }));
 
@@ -249,7 +250,7 @@ export function Calculator() {
 
   <Grid container justify="center" alignItems="center">
     <Grid item xs={12} sm={10} md={8} lg={8} py={2} className={classes.inputrow}>
-      <Button fullWidth  className={classes.button} color='primary' variant="outlined" disabled={!inputReady}  onClick={calculate}>Calculate</Button>
+      <Button fullWidth  className={classes.button} color='primary' variant="outlined" disabled={!inputReady}  onClick={calculate}>Fill in the inputs, then click here to calculate</Button>
     </Grid>
   </Grid>
   {resultReady &&

@@ -14,6 +14,7 @@ export const fetchFHIRResources =  () => {
 
         let response
         try {
+
             response = await axios.get(
                 'https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB',
                 axiosOption 
@@ -29,11 +30,13 @@ export const fetchFHIRResources =  () => {
                 axiosOption 
             )
             dispatch(fetchFHIRSuccess({ 'type': 'height', 'resource':response.data})) //store the resources    
-            dispatch(loadingDone())
+
         }
         catch(e){
             console.log(e)
         }
+        dispatch(loadingDone())
       }
+      
 }
 
