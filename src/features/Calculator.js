@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import store from '../../app/store';
+import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -10,7 +9,6 @@ import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
-import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,27 +42,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#fff',
     padding:  theme.spacing(3),
-    margin:  theme.spacing(1),
+    // transition: 'opacity 1s'
   },
   input: {
     backgroundColor: theme.palette.secondary.main, 
   },
   inputField: {
     backgroundColor: '#fff', 
-
   }
 }));
 
 export function Calculator() {
-  const patient = useSelector(state => state.gender)
+
+  const patientFeatures = useSelector(state=>state.patientFeatures);
+  const [values, setValues] = useState(patientFeatures);
+
+  console.log(patientFeatures);
+
+
   const classes = useStyles();
-  const [values, setValues] = useState({
-    sex: '',
-    age: '',
-    weight: '',
-    creatinine: '',
-    height:'',
-  });
 
   const [result, setResult] = useState({
     score: 0,
@@ -75,20 +71,30 @@ export function Calculator() {
   const [resultReady, setResultReady] =useState(false)
 
   const handleToggle = (event, newValue) => {
+    setResultReady(false)
     setValues({ ...values, sex: newValue });
   };
 
   const handleChange = (prop) => (event) => {
+    setResultReady(false)
     setValues({ ...values, [prop]: event.target.value });
   };
 
+  const handleAgeChange = (prop) => (event) => {
+    setResultReady(false)
+    if(event.target.value==='' || /^[0-9\b]+$/.test(event.target.value)){
+      setValues({ ...values, [prop]: event.target.value });
+    } else {
+      return;
+    }
+  };
 
   const calculate = ()=>{
     let sum = 0
-    if(values.sex=='Male'){
+    if(values.sex==='male'){
       sum++
     }
-    if(parseInt(values.age)>40){
+    if(values.age>40){
       sum++
     }
     if(values.weight>60){
@@ -101,68 +107,59 @@ export function Calculator() {
       sum++
     }
     setResult({ ...result, score: sum, severity: (sum>3) ? 'high':'low' });
-    setResultReady(true)
+    setResultReady(true);
   }
+
 
   useEffect(() => {
     let ready = true
     Object.keys(values).forEach(e=>{
-      ready = ready && values[e]!=''
+      ready = ready && values[e]!==''
     })
     setInputReady(ready)
-    console.log(ready)
-  },[values])
+  },[values]);
 
  return (
   <div className={classes.root}>
   <Grid container justify="center" alignItems="center">
-    <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
-      <span>{patient}</span>
-    </Grid>
+
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
       <Grid container>
         <Grid item xs={6}>
           <Paper className={classes.paper} elevation={0}>Sex</Paper>
         </Grid>
         <Grid item xs={6}>
-          
-        <ToggleButtonGroup
-         value={values.sex}
-         exclusive
-         onChange={handleToggle}
-         aria-label="sex"
-        className={classes.inputcol}
-    >
-        <ToggleButton className={classes.toggle} m={0} value="Female" aria-label="left aligned">
-        Female
-      </ToggleButton>
-      <ToggleButton className={classes.toggle} m={0}  value="Male" aria-label="centered">
-        Male
-      </ToggleButton>
-      
-    </ToggleButtonGroup>
-
+          <ToggleButtonGroup
+            value={values.sex}
+            exclusive
+            onChange={handleToggle}
+            aria-label="sex"
+            className={classes.inputcol}
+          >
+            <ToggleButton className={classes.toggle} m={0} value="female" aria-label="left aligned">Female</ToggleButton>
+            <ToggleButton className={classes.toggle} m={0}  value="male" aria-label="centered">Male</ToggleButton>
+          </ToggleButtonGroup>
         </Grid>  
       </Grid>
     </Grid>
 
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
-    <Grid container>
+      <Grid container>
         <Grid item xs={6}>
           <Paper className={classes.paper} elevation={0}>Age</Paper>
         </Grid>
         <Grid item xs={6}>
-        <FormControl          fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
-          <OutlinedInput
-            id="outlined-adornment-age"
-            value={values.age}
-            onChange={handleChange('age')}
-            endAdornment={<InputAdornment position="end">years</InputAdornment>}
-            aria-describedby="outlined-age-helper-text"
-            inputProps={{'aria-label': 'age'}}
-            labelWidth={0}
-          />
-        </FormControl>
+          <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
+            <OutlinedInput
+              id="outlined-adornment-age"
+              type='tel'
+              value={values.age}
+              onChange={handleAgeChange('age')}
+              endAdornment={<InputAdornment position="end">years</InputAdornment>}
+              aria-describedby="outlined-age-helper-text"
+              labelWidth={0}
+            />
+          </FormControl>
         </Grid>  
       </Grid>
     </Grid>
@@ -173,18 +170,18 @@ export function Calculator() {
           <Paper className={classes.paper} elevation={0}>Weight</Paper>
         </Grid>
         <Grid item xs={6}>
-        <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
-          <OutlinedInput
-            id="outlined-adornment-weight"
-            value={values.weight}
-
-            onChange={handleChange('weight')}
-            endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-            aria-describedby="outlined-age-helper-text"
-            inputProps={{'aria-label': 'weight'}}
-            labelWidth={0}
-          />
-        </FormControl>
+          <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
+            <OutlinedInput
+              type='number'
+              id="outlined-adornment-weight"
+              value={values.weight}
+              onChange={handleChange('weight')}
+              endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+              aria-describedby="outlined-age-helper-text"
+              inputProps={{'aria-label': 'weight'}}
+              labelWidth={0}
+            />
+          </FormControl>
         </Grid>  
       </Grid>
     </Grid>
@@ -194,17 +191,18 @@ export function Calculator() {
           <Paper className={classes.paper} elevation={0}>Creatinine</Paper>
         </Grid>
         <Grid item xs={6}>
-        <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
-          <OutlinedInput
-            id="outlined-adornment-creatinine"
-            value={values.creatinine}
-            onChange={handleChange('creatinine')}
-            endAdornment={<InputAdornment position="end">mg/dL</InputAdornment>}
-            aria-describedby="outlined-Creatinine-helper-text"
-            inputProps={{'aria-label': 'creatinine'}}
-            labelWidth={0}
-          />
-        </FormControl>
+          <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
+            <OutlinedInput
+              id="outlined-adornment-creatinine"
+              type='number'
+              value={values.creatinine}
+              onChange={handleChange('creatinine')}
+              endAdornment={<InputAdornment position="end">mg/dL</InputAdornment>}
+              aria-describedby="outlined-Creatinine-helper-text"
+              inputProps={{'aria-label': 'creatinine'}}
+              labelWidth={0}
+            />
+          </FormControl>
         </Grid>  
       </Grid>
     </Grid>
@@ -217,6 +215,7 @@ export function Calculator() {
         <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
           <OutlinedInput
             id="outlined-adornment-height"
+            type='number'
             value={values.height}
             onChange={handleChange('height')}
             endAdornment={<InputAdornment position="end">cm</InputAdornment>}
@@ -235,14 +234,13 @@ export function Calculator() {
       <Button fullWidth color='primary' variant="contained" disabled={!inputReady}  onClick={calculate}>Calculate</Button>
     </Grid>
   </Grid>
-  <Fade in={resultReady}>
-  <Grid container justify="center" alignItems="center">
-    <Grid item xs={12} sm={10} md={8} lg={8}>
-      <Paper className={classes.paper, classes.resulttext} elevation={0}>Result: {result.score}, {result.severity}</Paper>
+  {resultReady &&
+    <Grid container justify="center" alignItems="center">
+      <Grid item xs={12} sm={10} md={8} lg={8}>
+        <Paper className={clsx(classes.paper, classes.resulttext)} elevation={0}>Result: {result.score}, {result.severity}</Paper>
+      </Grid>
     </Grid>
-  </Grid>
-  </Fade>
-  
+  }  
 </div>
     );
 }
