@@ -33,22 +33,22 @@ const useStyles = makeStyles((theme) => ({
   },
   toggle: {
     width:'50%',
-    backgroundColor: theme.palette.secondary.main, 
+    backgroundColor: theme.palette.secondary.main,
     border: '1px solid #ccc',
     margin: '0px'
   },
   resulttext: {
-    backgroundColor: theme.palette.primary.dark, 
+    backgroundColor: theme.palette.primary.dark,
     textAlign: 'center',
     color: '#fff',
     padding:  theme.spacing(3),
     // transition: 'opacity 1s'
   },
   input: {
-    backgroundColor: theme.palette.secondary.main, 
+    backgroundColor: theme.palette.secondary.main,
   },
   inputField: {
-    backgroundColor: '#fff', 
+    backgroundColor: '#fff',
   }
 }));
 
@@ -57,9 +57,6 @@ export function Calculator() {
   const patientFeatures = useSelector(state=>state.patientFeatures);
   const [values, setValues] = useState(patientFeatures);
 
-  console.log(patientFeatures);
-
-
   const classes = useStyles();
 
   const [result, setResult] = useState({
@@ -67,7 +64,7 @@ export function Calculator() {
     severity: ''
   })
 
-  const [inputReady, setInputReady] =useState(false) 
+  const [inputReady, setInputReady] =useState(false)
   const [resultReady, setResultReady] =useState(false)
 
   const handleToggle = (event, newValue) => {
@@ -139,7 +136,7 @@ export function Calculator() {
             <ToggleButton className={classes.toggle} m={0} value="female" aria-label="left aligned">Female</ToggleButton>
             <ToggleButton className={classes.toggle} m={0}  value="male" aria-label="centered">Male</ToggleButton>
           </ToggleButtonGroup>
-        </Grid>  
+        </Grid>
       </Grid>
     </Grid>
 
@@ -160,7 +157,7 @@ export function Calculator() {
               labelWidth={0}
             />
           </FormControl>
-        </Grid>  
+        </Grid>
       </Grid>
     </Grid>
 
@@ -182,7 +179,7 @@ export function Calculator() {
               labelWidth={0}
             />
           </FormControl>
-        </Grid>  
+        </Grid>
       </Grid>
     </Grid>
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
@@ -203,7 +200,7 @@ export function Calculator() {
               labelWidth={0}
             />
           </FormControl>
-        </Grid>  
+        </Grid>
       </Grid>
     </Grid>
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow} >
@@ -224,7 +221,7 @@ export function Calculator() {
             labelWidth={0}
           />
         </FormControl>
-        </Grid>  
+        </Grid>
       </Grid>
     </Grid>
   </Grid>
@@ -240,7 +237,7 @@ export function Calculator() {
         <Paper className={clsx(classes.paper, classes.resulttext)} elevation={0}>Result: {result.score}, {result.severity}</Paper>
       </Grid>
     </Grid>
-  }  
+  }
 </div>
     );
 }
