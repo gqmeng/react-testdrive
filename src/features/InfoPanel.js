@@ -46,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     width:'100%',
-    textAlign:'left'
+    textAlign:'left',
+    textTransform:'none'
   },
   tabs: {
     width:'50%'
@@ -60,13 +61,20 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left'
   },
   panelheader: {
+
     // backgroundColor: theme.palette.primary.main
   },
   bullet: {
     display: 'inline-block',
-    margin: '0 2px',
+    margin: theme.spacing(1),
     // transform: 'scale(0.8)',
   },
+  panel: {
+    backgroundColor: '#d7d7d7',
+    color: '#595959',
+    marginTop: theme.spacing(0),
+    border: '2px solid #1bb193'
+  }
 }));
 
 
@@ -92,7 +100,7 @@ export function InfoPanel() {
           <Tab className={classes.panelheader} label="When To Use" {...a11yProps(0)} />
           <Tab className={classes.panelheader}  label="Pearls/Pitfalls" {...a11yProps(1)} />
          </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel className={classes.panel} value={value} index={0}>
         <Typography variant="body1">
           {bull}{ExtraInfo.whenToUse[0]}
         </Typography>
@@ -102,7 +110,7 @@ export function InfoPanel() {
         
  
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel className={classes.panel}  value={value} index={1}>
         <Typography variant="h6" >
           {ExtraInfo.pearlsPitfalls.title}
         </Typography>

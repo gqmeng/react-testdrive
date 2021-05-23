@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import ToggleButton from '@material-ui/lab/ToggleButton';
@@ -14,7 +14,8 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    width:'100%'
+    width:'100%',
+    textTransform:'none'
   },
   paper: {
     padding: theme.spacing(1),
@@ -22,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary
   },
   inputrow: {
-    borderTop: '1px solid #eee',
-    borderBottom: '1px solid #eee',
+    borderTop: '1px solid #f0f0f0',
+    borderBottom: '1px solid #f0f0f0',
     alignItems: "center",
     padding: `${theme.spacing(1)}px ${theme.spacing(0)}px`,
   },
@@ -35,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
     width:'50%',
     backgroundColor: theme.palette.secondary.main,
     border: '1px solid #ccc',
-    margin: '0px'
+    margin: '0px',
+    textTransform:'none'
   },
   resulttext: {
     backgroundColor: theme.palette.primary.dark,
@@ -49,8 +51,27 @@ const useStyles = makeStyles((theme) => ({
   },
   inputField: {
     backgroundColor: '#fff',
+  },
+  inputLabel: {
+    fontSize: '1.25rem',
+    color:'#595959'
+  },
+  button: {
+    border: `2px solid ${theme.primary}`
   }
 }));
+
+const StyledToggleButtonGroup = withStyles((theme) => ({
+  grouped: {
+    margin: theme.spacing(0.1),
+     '&:not(:first-child)': {
+      borderTopRightRadius: theme.shape.borderRadius,
+    },
+    '&:first-child': {
+      borderTopLeftRadius: theme.shape.borderRadius,
+    },
+  },
+}))(ToggleButtonGroup);
 
 export function Calculator() {
 
@@ -123,10 +144,10 @@ export function Calculator() {
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
       <Grid container>
         <Grid item xs={6}>
-          <Paper className={classes.paper} elevation={0}>Sex</Paper>
+          <Paper className={classes.paper} elevation={0}><span className={classes.inputLabel}>Sex</span></Paper>
         </Grid>
         <Grid item xs={6}>
-          <ToggleButtonGroup
+          <StyledToggleButtonGroup
             value={values.sex}
             exclusive
             onChange={handleToggle}
@@ -135,7 +156,7 @@ export function Calculator() {
           >
             <ToggleButton className={classes.toggle} m={0} value="female" aria-label="left aligned">Female</ToggleButton>
             <ToggleButton className={classes.toggle} m={0}  value="male" aria-label="centered">Male</ToggleButton>
-          </ToggleButtonGroup>
+          </StyledToggleButtonGroup>
         </Grid>
       </Grid>
     </Grid>
@@ -143,7 +164,7 @@ export function Calculator() {
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
       <Grid container>
         <Grid item xs={6}>
-          <Paper className={classes.paper} elevation={0}>Age</Paper>
+          <Paper className={classes.paper} elevation={0}><span className={classes.inputLabel}>Age</span></Paper>
         </Grid>
         <Grid item xs={6}>
           <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
@@ -164,7 +185,7 @@ export function Calculator() {
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
     <Grid container>
         <Grid item xs={6}>
-          <Paper className={classes.paper} elevation={0}>Weight</Paper>
+          <Paper className={classes.paper} elevation={0}><span className={classes.inputLabel}>Weight</span></Paper>
         </Grid>
         <Grid item xs={6}>
           <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
@@ -185,7 +206,7 @@ export function Calculator() {
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
     <Grid container>
         <Grid item xs={6}>
-          <Paper className={classes.paper} elevation={0}>Creatinine</Paper>
+          <Paper className={classes.paper} elevation={0}><span className={classes.inputLabel}>Creatinine</span></Paper>
         </Grid>
         <Grid item xs={6}>
           <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
@@ -206,7 +227,7 @@ export function Calculator() {
     <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow} >
     <Grid container >
         <Grid item xs={6}>
-          <Paper className={classes.paper}  elevation={0}>Height</Paper>
+          <Paper className={classes.paper}  elevation={0}><span className={classes.inputLabel}>Height</span></Paper>
         </Grid>
         <Grid item xs={6}>
         <FormControl fullWidth className={clsx(classes.margin, classes.textField, classes.input)} variant="outlined">
@@ -227,8 +248,8 @@ export function Calculator() {
   </Grid>
 
   <Grid container justify="center" alignItems="center">
-    <Grid item xs={12} sm={10} md={8} lg={8} className={classes.inputrow}>
-      <Button fullWidth color='primary' variant="contained" disabled={!inputReady}  onClick={calculate}>Calculate</Button>
+    <Grid item xs={12} sm={10} md={8} lg={8} py={2} className={classes.inputrow}>
+      <Button fullWidth  className={classes.button} color='primary' variant="outlined" disabled={!inputReady}  onClick={calculate}>Calculate</Button>
     </Grid>
   </Grid>
   {resultReady &&
